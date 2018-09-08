@@ -75,7 +75,7 @@
 
 Curve : MobileSound
 {
-  classvar  classVersion  = "0.1";   //RELEASE
+  classvar  classVersion  = "0.2";   //RELEASE
 
   classvar  invocationArgs;
 
@@ -1266,7 +1266,7 @@ Curve : MobileSound
         //SPACER
 
     enviroB = (
-      group:                group.pretty(nolog:true),
+      group:                group.pretty(nolog:true).minel(elisionLength:128),
     );
 
 

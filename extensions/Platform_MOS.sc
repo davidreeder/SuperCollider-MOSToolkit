@@ -28,7 +28,7 @@
 
   //------------------------------------------- -o--
   *mosVersion  { 
-    var  extensionVersion  = "0.1";   //RELEASE
+    var  extensionVersion  = "0.2";   //RELEASE
     ^this.mosVersionString(extensionVersion);
   }
 
@@ -88,10 +88,10 @@
 
       ("(%)%").format(
                  containedPath,
-                 ("%.%.replace(Platform.%, nil)").format( sourceClass.classname,
-                                                          pathThatIsTooLong, 
-                                                          containedPath
-                                                        ).compile.();
+                 ("%.%.replace(Platform.%, "")").format( sourceClass.classname,
+                                                         pathThatIsTooLong, 
+                                                         containedPath
+                                                 ).compile.();
                );
     }; //elidePath
 
@@ -126,7 +126,6 @@
 
     enviroA5 = (
       defaultGUIScheme: platformInstance.defaultGUIScheme,
-      defaultHIDScheme: platformInstance.defaultHIDScheme,
     );
 
         // SPACER

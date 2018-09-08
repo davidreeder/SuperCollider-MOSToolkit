@@ -47,7 +47,7 @@
 
   //------------------------------------------- -o--
   *mosVersion  { 
-    var  extensionVersion  = "0.1";   //RELEASE
+    var  extensionVersion  = "0.2";   //RELEASE
     ^this.mosVersionString(extensionVersion);
   }
 
@@ -152,9 +152,9 @@
 
 
     //
-    str = ("numChans=%  lag=%  min/max=%/%  volume=%")
+    str = ("numChannels=%  lag=%  min/max=%/%  volume=%")
       .format(
-        this.volume.numChans,
+        this.volume.numChannels,
         this.volume.lag,
         this.volume.min, this.volume.max,
         this.volume.volume,
@@ -253,8 +253,6 @@
     });
 
 
-    // NBXXX  Be sure it is in the right place...
-    //
     AppClock.sched(0.0, { |appClockTime| 
       Window.findWindowByName(nodesguiWindowName, nodesguiRect, true);
     });
@@ -327,8 +325,6 @@
     });
 
 
-    // NBXXX  Be sure it is in the right place...
-    //
     AppClock.sched(0.0, { |appClockTime| 
       Window.findWindowByName(windowName, windowRect, true);
     });

@@ -53,8 +53,8 @@
 
 MobileSound 
 {
-  classvar     suiteVersion  = "0.4",   //RELEASE
-               classVersion  = "0.3";   //RELEASE
+  classvar     suiteVersion  = "0.4.1",   //RELEASE
+               classVersion  = "0.4";     //RELEASE
 
 
   classvar  <> appBrowserPreference  = "/Applications/Firefox.app",
@@ -674,7 +674,6 @@ MobileSound
          enviroB, enviroC, enviroD,
          enviroArray;
 
-
     //
     enviroA1 = (
         appBrowser:             this.appBrowser,
@@ -709,7 +708,7 @@ MobileSound
 
 
     //
-    ^this.new.prettyLocal( 
+    ^this.prettyLocal( 
             enviroArray, title,
             pattern, elisionLength, depth,
             casei, compileString, indent, initialCallee,

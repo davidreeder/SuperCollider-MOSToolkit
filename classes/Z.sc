@@ -74,7 +74,7 @@
 
 Z : MobileSound
 {
-  classvar   classVersion = "0.4";   //RELEASE
+  classvar   classVersion = "0.5";   //RELEASE
 
 
 
@@ -130,6 +130,7 @@ Z : MobileSound
 
   //------------------------ -o-
   *openURL  { |url, useSSL|             
+
     var  httpPrefix   = "http://",
          httpsPrefix  = "https://",
          cmdOpen      = "open -a",
@@ -370,7 +371,7 @@ Z : MobileSound
       //pattern = pattern.classname.asSymbol.asClass;
 
       //
-      htmlFile = OSXPlatform.new.findHelpFile(pattern).replace("file://", nil);
+      htmlFile = OSXPlatform.new.findHelpFile(pattern).replace("file://", "");
 
       hashPosition = htmlFile.findBackwards("#");
       if (hashPosition.notNil, { htmlFile = htmlFile[0..(hashPosition-1)]; });
@@ -595,7 +596,6 @@ Z : MobileSound
 
       meterWindow.bounds = meterWindowRect;
 
-      // NBXXX  Be sure it is in the right place...
       //
       AppClock.sched(0.0, { |appClockTime| 
         meterWindow.bounds = meterWindowRect;
@@ -705,7 +705,7 @@ Z : MobileSound
   }
 
   *separatorLine  { |title=""|
-     var  terminalWidth  = (80 - 2),
+     var  terminalWidth  = (80 - 2), 
           lineLength     = 0,
           lineHook       = " -o--  ",
           lineCharacter  = "-",

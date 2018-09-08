@@ -2,8 +2,8 @@
 MOS TOOLKIT CLASSES AND EXTENTIONS FOR SUPERCOLLIDER
 =============================================================
 
-                                        v0.4
-                                        August 2018
+                                        v0.4.1
+                                        September 2018
 Table Of Contents
 - - - - - - - - -
   OVERVIEW
@@ -11,6 +11,7 @@ Table Of Contents
   GETTING STARTED (WHERE TO FIND DOCUMENTATION?) 
   EXPLORING MOS TOOLKIT
   WHAT NEXT?
+  VERSION HISTORY
 
 
 
@@ -83,9 +84,9 @@ See below for detail on using the class extentions.
 INSTALLING MOS TOOLKIT
 
 
-The MOS Toolkit was developed under SuperCollider v3.6.6 on macOS v10.12.2.
-However, it is expected to work without difficulty on newer versions and
-other platforms.
+The MOS Toolkit was developed under SuperCollider v3.6.6, then updated for
+SuperCollider v3.9.3, on macOS v10.12.2.  However, it is expected to work
+without difficulty on newer versions and other platforms.
 
 For those new to SuperCollider, first... install SuperCollider:
 
@@ -424,8 +425,6 @@ MOS Toolkit is a living project, forever evolving and changing.
 In addition to continued development of core classes, extentions and Suites,
 specific items on the TO-DO list include...
 
-  . Test with current version of SuperCollider!
-
   . Extend Curve to more complex envelopes and allow "chaining" of Curves.
 
   . Use Semaphore to resolve race conditions, notably in
@@ -440,4 +439,17 @@ specific items on the TO-DO list include...
   . Create a Quark
 
   . Rewrite select functionality as C++ primitives
+
+
+
+
+#------------------------------------------ -o-
+VERSION HISTORY
+
+
+v0.4.1 -- September 2018
+  Minor changes for compatibility with SuperCollider v3.9.3.
+
+v0.4 -- August 2018
+  Initial release.  MOS Toolkit Foundation.
 

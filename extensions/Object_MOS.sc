@@ -80,7 +80,7 @@
 
   //------------------------------------------- -o--
   *mosVersion  { 
-    var  extensionVersion  = "0.1";   //RELEASE
+    var  extensionVersion  = "0.2";   //RELEASE
     ^this.mosVersionString(extensionVersion);
   }
 
@@ -90,7 +90,7 @@
   //------------------------------------------- -o--
 
   //--------------------------- -o-
-  *classname  { ^this.class.asString.replace("Meta_", nil); }
+  *classname  { ^this.class.asString.replace("Meta_", ""); }
   classname   { ^this.class.asString; }
 
 
@@ -794,9 +794,9 @@
   //   bulletIndex        
   //       Choose rotating bullet character.  (Used in Dictionary.pretty().)
   //   enumerationOffset  
-  //       UNUSED.
+  //       UNUSED?!
   //   minimumSpacerSize  
-  //       UNUSED.
+  //       UNUSED?!
   //   nolog              
   //       Omit timestamp from this pretty() dump.
   //   shortVersion       

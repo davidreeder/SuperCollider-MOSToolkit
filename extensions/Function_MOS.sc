@@ -32,7 +32,7 @@
 
   //------------------------------------------- -o--
   *mosVersion  { 
-    var  extensionVersion  = "0.1";   //RELEASE
+    var  extensionVersion  = "0.2";   //RELEASE
     ^this.mosVersionString(extensionVersion);
   }
 
@@ -54,7 +54,7 @@
 
 
     //
-    signature  = this.def.asString.replace("Meta_", nil).replace(":", ".");
+    signature  = this.def.asString.replace("Meta_", "").replace(":", ".");
     tokens     = signature.split($ );
 
     if (tokens.size > 1, {
@@ -91,7 +91,7 @@
 
     methname = methname.split($()[0];
 
-    if (preserveUnderscore.not, { methname = methname.replace("_", nil); });
+    if (preserveUnderscore.not, { methname = methname.replace("_", ""); });
 
     //
     ^methname;

@@ -37,7 +37,7 @@
 
 Parse : MobileSound
 {
-  classvar classVersion = "0.1";   //RELEASE
+  classvar classVersion = "0.2";   //RELEASE
 
 
 
@@ -157,7 +157,7 @@ Parse : MobileSound
     //
     classRequirementStr = classRequirement
                             .pretty(depth:0)
-                            .replace("[", nil).replace("]", nil)
+                            .replace("[", "").replace("]", "")
                             .stripWhiteSpace;
 
     if (classRequirement.size <= 1, { oneStr = ""; });

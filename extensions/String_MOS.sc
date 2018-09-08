@@ -49,7 +49,7 @@
 
   //------------------------------------------- -o--
   *mosVersion  { 
-    var  extensionVersion  = "0.1";   //RELEASE
+    var  extensionVersion  = "0.2";   //RELEASE
     ^this.mosVersionString(extensionVersion);
   }
 
@@ -181,8 +181,8 @@
 
   unquote  { 
     ^this
-       .replace($".asString, nil)
-       .replace($'.asString, nil)
+       .replace($".asString, "")
+       .replace($'.asString, "")
        .replace("\\ ", " "); 
   }
 
@@ -190,8 +190,8 @@
   //------------------ -o-
   removeWhitespace  { 
     ^this
-       .replace(" ", nil)
-       .replace("\t", nil);
+       .replace(" ", "")
+       .replace("\t", "");
   }
 
 

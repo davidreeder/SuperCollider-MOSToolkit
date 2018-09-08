@@ -41,7 +41,7 @@
 
   //------------------------------------------- -o--
   *mosVersion  { 
-    var  extensionVersion  = "0.1";   //RELEASE
+    var  extensionVersion  = "0.2";   //RELEASE
     ^this.mosVersionString(extensionVersion);
   }
 
@@ -248,7 +248,7 @@
           suffixMatches  = false;
 
           if (returnFullPath.not, {
-            pathname = pathname.replace(directory ++ "/", nil);
+            pathname = pathname.replace(directory ++ "/", "");
           });
 
           if (    suffix.isNil
