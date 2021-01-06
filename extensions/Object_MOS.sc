@@ -70,7 +70,7 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
@@ -794,9 +794,7 @@
   //   bulletIndex        
   //       Choose rotating bullet character.  (Used in Dictionary.pretty().)
   //   enumerationOffset  
-  //       UNUSED?!
   //   minimumSpacerSize  
-  //       UNUSED?!
   //   nolog              
   //       Omit timestamp from this pretty() dump.
   //   shortVersion       

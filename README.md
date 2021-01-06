@@ -1,10 +1,10 @@
 
 # MOS Toolkit Classes and Extentions for SuperCollider
 
-                                        v0.4.1
-                                        September 2018
+                                        v0.5
+                                        September 2020
 
-Table of Contents                                 |
+Contents                                          |
 -----------------                                 |
   OVERVIEW                                        |
   INSTALLING MOS TOOLKIT                          |
@@ -211,16 +211,14 @@ For cases where too-much-information is available, but not always appropriate, i
 
 ### _______ NAMESPACE AND RESOURCE MANAGEMENT _______
 
-"Namespace" refers to any resource that has a heirarchical ordering.  Such as pathnames, OSC paths, node graphs.  The following classes and methods help to manage namespaces and enfoce resource management:
+"Namespace" refers to any resource that has a heirarchical ordering.  Such as pathnames, OSC paths, node graphs.  The following classes and methods help to manage namespaces and enforce resource management:
 
-  * * `.workingDirectory`
-  *   **BufferCache**
-  *   `MobileSound.createGroup()`
-  *   `Node.newRegistered()` 
-  *   `OSC.oscPath*`
-  *   `Routine.spinlock()` 
-                //FIX -- second asterixk renders as sub-point...
-                //         (here and throughout.)
+  *  `*` `.workingDirectory`
+  *  **BufferCache**
+  *  `MobileSound.createGroup()`
+  *  `Node.newRegistered()` 
+  *  `OSC.oscPath*`
+  *  `Routine.spinlock()` 
 
 All resources have their place in the heirarchy.  MOS Toolkit specific resources will always be rooted (at some arbirary depth) under some logical equivalent of "mos".  Eg: `LongSample.group` is under `MobileSound.group` is under the **RootNode**.  Pathnames are more concrete and actually contain the string "mos".  Even **Synth** names, eg: `\mosSynthCurveExponentialUpwards`.
 
@@ -237,12 +235,12 @@ By default, `Buffer.load()` uses **BufferCache**, though it can be turned off.
 
 "Protocol" in this context means convention or standard operating procedure.  Protocols are conventions that all MOS Toolkit custom classes should follow.  None are required... except when they are needed.
 
-  * *   `.demo`
-  * *   `.group`  (Use `MobileSound.createGroup()`.)
+  * `*` `.demo`
+  * `*` `.group`  (Use `MobileSound.createGroup()`.)
   * (*) `.mosVersion`
   * (*) `.pr(r)etty`  [`.pr(r)`]
-  * *   `.usage`
-  * *   `.workingDirectory`
+  * `*` `.usage`
+  * `*` `.workingDirectory`
 
 There may be others...
 
@@ -277,21 +275,7 @@ Classes as development tools:
   * **Dump** and **Z** support all of the above and endeavor to have a few useful tricks of their own.
 
 
-The code may contain commented hints, including:
-
-  * ALIAS
-  * DEBUG
-  * DEFAULTS
-  * FIX
-  * FORKS
-  * LOGS
-  * NEEDS ROUTINE
-  * Q
-  * RELEASE
-  * SPINLOCK TARGET
-  * STATUS
-  * TBD
-  * XXX
+The code contains structural hints in the comments, including: ALIAS DEBUG DEFAULTS FIX FORKS LOGS NB NEEDS ROUTINE Q RELEASE SPINLOCK TARGET STATUS TBD XXX.
 
 
 
@@ -361,6 +345,9 @@ In addition to continued development of core classes, extentions and Suites, spe
 
 ## VERSION HISTORY
 
+
+v0.5 -- September 2020
+> Compatibility with SuperCollider v3.11.1.
 
 v0.4.1 -- September 2018
 > Minor changes for compatibility with SuperCollider v3.9.3.

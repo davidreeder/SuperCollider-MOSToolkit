@@ -17,7 +17,7 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
@@ -80,6 +80,21 @@
                                  indent:        indent,
                                );
 
+                                /*
+        keyValue = enviroValue.pretty(
+                                 pattern:            pattern,
+                                 elisionLength:      elisionLength, 
+
+                                 casei:              casei,
+                                 compileString:      compileString,
+                                 indent:             "\t",
+                                 initialCallee:      initialCallee,
+
+                                 title:              title,
+                                 minimumSpacerSize:  minimumSpacerSize,
+                               );
+                                        */
+
         if (keyValue.isString, { keyValue = keyValue.unquote; });
 
         if (matchKey || matchValue, {
@@ -123,7 +138,7 @@
     var  prefixString  = "\n" ++ (indent ?? ""),
          indentLocal   = " ".dup(3).join,               //XXX
          patternLabel  = "",
-         sizeWidthMax  = 65,                            //XXX
+         sizeWidthMax  = 65,                            //TBD
          sizeWidth     = 0;
 
     var  bulletOptions = "*+-.", 

@@ -128,7 +128,7 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
@@ -294,7 +294,7 @@ IterationParameter : MobileSound
       \string, 
          { ^("%, %, %, %, %, %, %, %, %")
                .format( 
-                  parameterLogContext,    
+                  parameterLogContext,    //TBDFIX  How to post?
                   valueClassType,
                   referringInstance.cs,
                   parseValueFunction.cs,
@@ -310,7 +310,7 @@ IterationParameter : MobileSound
       \array,  
          {
            ^[ 
-                  parameterLogContext,   
+                  parameterLogContext,   //TBDFIX  How to post?
                   valueClassType,
                   referringInstance,
                   parseValueFunction,

@@ -46,15 +46,15 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
 
 MobileSound 
 {
-  classvar     suiteVersion  = "0.4.1",   //RELEASE
-               classVersion  = "0.4";     //RELEASE
+  classvar     suiteVersion  = "0.5",   //RELEASE
+               classVersion  = "0.5";   //RELEASE
 
 
   classvar  <> appBrowserPreference  = "/Applications/Firefox.app",
@@ -112,7 +112,7 @@ MobileSound
   //------------------------ -o-
   *appBrowser  
   {
-    if (this.appBrowserPreference.pathExists, {
+    if (this.appBrowserPreference.pathExists(false), {
       ^this.appBrowserPreference;
     });
 
@@ -123,7 +123,7 @@ MobileSound
                 this.appBrowserPreference
              ).postln; 
 
-    if (this.appBrowserDefault.pathExists, {
+    if (this.appBrowserDefault.pathExists(false), {
       ^this.appBrowserDefault;
     });
 
@@ -138,7 +138,7 @@ MobileSound
   }
 
   *appBrowser_  { |browserPath| 
-    if (browserPath.pathExists, {
+    if (browserPath.pathExists(false), {
       this.appBrowserPreference = browserPath;
 
     }, {

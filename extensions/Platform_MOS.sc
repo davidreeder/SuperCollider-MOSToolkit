@@ -18,7 +18,7 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
@@ -60,6 +60,7 @@
                enumerate, bulletIndex, enumerationOffset,
                minimumSpacerSize, nolog, shortVersion
              |
+
     var  title  = this.classname.toUpper;
 
     var  maxKeyLength  = "systemAppSupportDir".size;
@@ -184,7 +185,7 @@
 
         // SPACER
 
-    rval = ServerBoot.objects ?? "(unset)";
+    rval = ServerBoot.objects ?? "(unset)";  // XXXFIX  Broken by .pretty...
           
     enviroM = (
       \doOnCmdPeriod:           CmdPeriod.objects ?? "(unset)",

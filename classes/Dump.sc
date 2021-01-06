@@ -38,7 +38,7 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
@@ -396,6 +396,7 @@ Dump : MobileSound
 
   //
   *methodSignatures  { |pattern, casei, pathPattern, classobj|   
+
     var  patternLabel         = "",
          pathPatternLabel     = "",
          searchLabel          = "",

@@ -243,7 +243,7 @@
 //
 //
 //---------------------------------------------------------------------
-//     Copyright (C) David Reeder 2018.  sc@mobilesound.org
+//     Copyright (C) David Reeder 2018-2020.  sc@mobilesound.org
 //     Distributed under the Boost Software License, Version 1.0.
 //     (See ./LICENSE_1_0.txt or http://www.boost.org/LICENSE_1_0.txt)
 //---------------------------------------------------------------------
@@ -3131,9 +3131,9 @@ LongSample : Schumacher
     //
     Log.info(logContext, "BEGIN").postln; 
 
-    //useOnlyCustomSamples  = true;   //CONFIG
+    useOnlyCustomSamples  = true;   //CONFIG
 
-                                // Memory requirements.
+                                // Memory requirement.
                                 //
     if (Server.default.options.memSize < minimumMemSize, 
     {
@@ -3205,7 +3205,7 @@ LongSample : Schumacher
 
       if (rval < 0, {
         Log.error(thisFunction,
-                 "FAILED to boot Server with necessary memory requirements"
+                 "FAILED to boot Server with required amount of memory"
               ++ " (%).  Aborting %.demo()...",
                     minimumMemSize.sizeInBytes, this.classname
             ).postln; 

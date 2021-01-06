@@ -2,9 +2,14 @@
 MOS TOOLKIT CLASSES AND EXTENTIONS FOR SUPERCOLLIDER
 =============================================================
 
-                                        v0.4.1
-                                        September 2018
-Table Of Contents
+SuperCollider classes and extentions: Resource management, type checking,
+real-time controls, immediate reflection and feedback, simplify technical
+aspects of composition.
+
+                                        v0.5
+                                        September 2020
+
+Contents
 - - - - - - - - -
   OVERVIEW
   INSTALLING MOS TOOLKIT
@@ -20,21 +25,19 @@ Table Of Contents
 OVERVIEW
 
 
-The MOS Toolkit intends to combine and present existing SuperCollider
-functionality in the simplest possible way, allowing complex actions to be
-reduced to the smallest possible number of operations while managing an
-arbitrary degree of complexity, ideally with a single line of code.
-The MOS Toolkit implements a suite of core classes under the root class,
-MobileSound, coordinated with a variety of class extentions throughout
-the class heirarchy.
+The MOS Toolkit intends to present existing SuperCollider functionality in
+the simplest possible way, allowing complex actions to be reduced to the
+smallest possible number of operations while managing an arbitrary degree
+of complexity, ideally with a single line of code.  The MOS Toolkit
+implements a suite of classes under a new root class, MobileSound, which is
+coordinated with class extentions throughout the core class heirarchy.
 
 The MOS Toolkit may be used anywhere that sclang commands can be executed.
-Though it favors terminal driven interaction, especially with an editor
-that can map key strokes to code parameterized by text under the cursor.
+Terminal driven interaction brings extra convenience, especially with an
+editor that is capable of mapping key strokes to tokens under the cursor.
 
-Although MOS Toolkit endeavors to provide some interesting features in its
-own right, its primary goal is to support, simplify and streamline
-SuperCollider development for any purpose.
+Although MOS Toolkit provides new features, its primary goal is to support,
+simplify and streamline SuperCollider development for any purpose.
 
 
 MOS functionality includes:
@@ -258,14 +261,14 @@ NAMESPACE AND RESOURCE MANAGEMENT ----------------------------------------
 
 "Namespace" refers to any resource that has a heirarchical ordering.
 Such as pathnames, OSC paths, node graphs.  The following classes and
-methods help to manage namespaces and enfoce resource management:
+methods help to manage namespaces and enforce resource management:
 
   * .workingDirectory
-    BufferCache
-    MobileSound.createGroup()
-    Node.newRegistered() 
-    OSC.oscPath*
-    Routine.spinlock() 
+  BufferCache
+  MobileSound.createGroup()
+  Node.newRegistered() 
+  OSC.oscPath*
+  Routine.spinlock() 
 
 All resources have their place in the heirarchy.  MOS Toolkit specific
 resources will always be rooted (at some arbirary depth) under some
@@ -293,12 +296,12 @@ MOS TOOLKIT PROTOCOLS AND CONVENTIONS ------------------------------------
 procedure.  Protocols are conventions that all MOS Toolkit custom classes
 should follow.  None are required... except when they are needed.
 
-  *   .demo
-  *   .group  (Use MobileSound.createGroup().)
+   *  .demo
+   *  .group  (Use MobileSound.createGroup().)
   (*) .mosVersion
   (*) .pr(r)etty  [.pr(r)]
-  *   .usage
-  *   .workingDirectory
+   *  .usage
+   *  .workingDirectory
 
 There may be others...
 
@@ -307,61 +310,49 @@ Coding conventions:
 
   . Return values: As a rule all status reports, no matter how large, 
     are returned as strings.  The calling environment can handle it as it
-    sees fit.  (Eg: Return it verbatim as a string or caching it for other
-    uses.)  All functions or class methods that do not return a value must
+    sees fit.  (Eg: Return string verbatim or caches it for
+    conditional reporting.)
+    All functions or class methods that do not return a value must
     return an empty Symbol ('' or ^'').
 
-  . As a rule, String inputs can be expressed as Symbols.
+  . As a rule, (simple) String inputs can be passed in as Symbols.
 
-  . As a rule, never use default arguments, always use ?? to set a nil
-    input argument to something acceptable.
+  . As a rule, never use default arguments.  Always use ?? to set nil
+    input arguments to something acceptable.
 
-  . Use Parse to validate all inputs.  Always.  Especially in setters, upon
+  . Use Parse to validate all inputs.  Especially in setters, upon
     which the initialization methods rely heavily.
 
   . Declare all new Synths with .newRegistered().  Set paused:true unless 
-    it is absolutely clear that it will be running immediately upon
-    definition.
+    it will be running immediately upon definition.
 
   . String is naturally a great place to express certain system operations,
-    though the really heavy lifting should be expressed in the appropriate
+    though the heavy lifting should be expressed in the appropriate
     class and referenced from String.
 
 
 Classes as development tools:
   
-  . Log is intended to provide useful state updates in any context.
+  . Log -- Provides useful state updates in any context.
 
-  . Parse is intended to make code and operational environments more
+  . Parse -- Makes code and operational environments more
     robust and maintanable by quickly and precisely identifying bad inputs.
 
-  . Curve and IterationParameter are intended to make instances smarter and
+  . Curve and IterationParameter -- Make instances smarter and
     more flexible in real-time performance environments.
 
-  . BufferCache is intended to manage critical memory resources in
+  . BufferCache -- Manage critical memory resources in
     sample-rich performance environments.
 
-  . OSC is intended to filter the output of Server activity.
+  . OSC -- Filter the output of Server activity.
 
-  . Dump and Z support all of the above and endeavor to have a few useful
+  . Dump and Z -- Support all of the above and endeavor to have a few useful
     tricks of their own.
 
 
-The code may contain commented hints, including:
-
-  ALIAS
-  DEBUG
-  DEFAULTS
-  FIX
-  FORKS
-  LOGS
-  NEEDS ROUTINE
-  Q
-  RELEASE
-  SPINLOCK TARGET
-  STATUS
-  TBD
-  XXX
+The code contains structural hints in the comments, including: 
+  ALIAS DEBUG DEFAULTS FIX FORKS LOGS NB NEEDS ROUTINE Q RELEASE SPINLOCK
+  TARGET STATUS TBD XXX
 
 
 
@@ -384,7 +375,7 @@ This sub-section is concerned with both primitive and compound types as
 well as dashboard-like presentation of the state of complex classes.
 
 
-.pretty is used to gratuitously format some types into a "cannonical" form.
+.pretty is used to gratuitously format some types into a "canonical" form.
 Eg: Evaluating "42.0.pr" will return "42.0" because it is clearly a Float.
 Other examples include NetAddr.pretty() and Symbol.pretty().
 
@@ -402,7 +393,7 @@ Simplicity should rise over complexity in all cases!
 
 
 Classes also constitute a type.  For these, Object has been extended with
-methods that simply engage the methods already provided by sclang:
+methods that engage the methods already provided by sclang:
 
   .hasClassMethod()
   .hasClassVariable()
@@ -420,7 +411,7 @@ methods that simply engage the methods already provided by sclang:
 WHAT NEXT?
 
 
-MOS Toolkit is a living project, forever evolving and changing.
+MOS Toolkit is a living project, forever evolving and changing (albeit slowly).
 
 In addition to continued development of core classes, extentions and Suites,
 specific items on the TO-DO list include...
